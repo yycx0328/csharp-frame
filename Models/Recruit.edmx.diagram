@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f1948b03deec453dae3ecd39f63e3e4f" Name="Diagram1">
+        <EntityTypeShape EntityType="Recruit.Models.Auth_Permission" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.Auth_Role" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.Auth_User" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.Company" Width="1.5" PointX="2.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.User" Width="1.5" PointX="5.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.UserAccount" Width="1.5" PointX="8" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.UserThirdAccount" Width="1.5" PointX="8" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.Auth_Access" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Recruit.Models.Auth_UserRole" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Recruit.Models.FK_Auth_Access_Auth_Permission" ManuallyRouted="false" />
+        <AssociationConnector Association="Recruit.Models.FK_Auth_Access_Auth_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Recruit.Models.FK_Auth_UserRole_Auth_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="Recruit.Models.FK_Auth_UserRole_Auth_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Recruit.Models.FK_UserAccount_User" ManuallyRouted="false" />
+        <AssociationConnector Association="Recruit.Models.FK_UserThirdAccount_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

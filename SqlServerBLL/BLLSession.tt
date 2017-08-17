@@ -1,0 +1,53 @@
+﻿<#@ template language="C#" debug="false" hostSpecific="true" #>
+<#@ include file="EF.Utility.CS.ttinclude" #>
+<#@ output extension=".cs" #>
+<#
+	CodeGenerationTools code = new CodeGenerationTools(this);
+	MetadataLoader loader = new MetadataLoader(this);
+	CodeRegion region = new CodeRegion(1);
+	MetadataTools ef = new MetadataTools(this);
+
+	string inputFile = "../Models/Recruit.edmx";
+	EdmItemCollection itemCollection = loader.CreateEdmItemCollection(inputFile);
+	string namespaceName = code.VsNamespaceSuggestion();
+	EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Models;
+using IBLL;
+
+namespace SqlServerBLL
+{
+	public partial class BLLSession: IBLLSession
+	{
+<#
+int verssion = 0;
+foreach(EntityType entity in itemCollection.GetItems<EntityType>().OrderBy(e=>e.Name))
+{
+	verssion ++;
+#>
+		#region <#= verssion.ToString("00") #> 业务接口 I<#= entity.Name #>BLL
+		I<#= entity.Name #>BLL i<#= entity.Name #>BLL;
+		public I<#= entity.Name #>BLL I<#= entity.Name #>BLL
+		{
+			get
+			{
+				if(i<#= entity.Name #>BLL == null)
+					i<#= entity.Name #>BLL = new <#= entity.Name #>Service();
+				return i<#= entity.Name #>BLL;
+			}
+			set
+			{
+				i<#= entity.Name #>BLL = value;
+			}
+		}
+		#endregion
+
+<#
+}
+#>
+	}
+}

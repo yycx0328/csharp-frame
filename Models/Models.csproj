@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8007F4F2-3E57-47B0-849F-AEF386DE9B28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auth_Access.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auth_Permission.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auth_Role.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auth_User.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auth_UserRole.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\Auth_Access.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\Auth_Permission.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\Auth_Role.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\Auth_User.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\Auth_UserRole.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\Company.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\ExtendModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\User.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\UserAccount.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PocoModels\UserThirdAccount.cs">
+      <DependentUpon>ExtendModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recruit.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruit.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recruit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recruit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruit.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserThirdAccount.cs">
+      <DependentUpon>Recruit.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Recruit.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Recruit.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PocoModels\ExtendModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ExtendModels.cs</LastGenOutput>
+    </Content>
+    <Content Include="Recruit.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Recruit.Context.cs</LastGenOutput>
+      <DependentUpon>Recruit.edmx</DependentUpon>
+    </Content>
+    <Content Include="Recruit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Recruit.edmx</DependentUpon>
+      <LastGenOutput>Recruit.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Recruit.edmx.diagram">
+      <DependentUpon>Recruit.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
